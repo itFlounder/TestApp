@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TestApp</string>
+    <drawable name="color_normal">#ffffff</drawable>
+    <drawable name="color_pressed">#ff6501</drawable>
+</resources>

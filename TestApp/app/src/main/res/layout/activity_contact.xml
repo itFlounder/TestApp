@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.shsany.testapp.contacts.EditTextDel
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/et_serch"
+        android:hint="搜索联系人"
+        android:paddingLeft="16dp"
+        android:textSize="14dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/bkg_serch"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="right">
+
+        <ListView
+            android:id="@+id/lv_contact"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none"></ListView>
+
+        <com.shsany.testapp.contacts.MikyouLetterListView
+            android:id="@+id/mllv_contact"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"/>
+
+        <TextView
+            android:id="@+id/tv_tips"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:visibility="gone"
+            android:layout_centerInParent="true"
+            android:background="@drawable/shape_tips_bgm"
+            android:gravity="center"
+            android:text="H"
+            android:textSize="20dp"
+            android:textColor="#ffffff"/>
+
+    </RelativeLayout>
+</LinearLayout>

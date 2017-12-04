@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.shsany.testapp.example.view.MessageListItem xmlns:android="http://schemas.android.com/apk/res/android"
+                                                 android:layout_width="match_parent"
+                                                 android:layout_height="50dp"
+                                                 android:background="@drawable/message_list_item_background">
+    <ImageView
+        android:id="@+id/iv_msg_item_icon"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/message_read_status"
+        android:duplicateParentState="true"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"/>
+    <TextView
+        android:id="@+id/tv_msg_item_icon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/iv_msg_item_icon"/>
+
+</com.shsany.testapp.example.view.MessageListItem>
