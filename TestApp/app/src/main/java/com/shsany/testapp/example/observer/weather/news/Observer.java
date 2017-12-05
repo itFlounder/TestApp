@@ -5,5 +5,11 @@ package com.shsany.testapp.example.observer.weather.news;
  */
 
 public interface Observer<T> {
+
     void upData(Observable<T> observable, T data);
+
+    /*void upData(News news,T data);
+
+    void upData(TestObserver observer, T data);*/
+
 }
