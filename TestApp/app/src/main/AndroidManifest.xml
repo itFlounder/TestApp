@@ -30,6 +30,19 @@
         <activity android:name=".mvvm.view.MvvmTestActivity"/>
         <activity android:name=".example.service.ServiceTestActivity"/>
         <activity android:name=".example.mvp.login.LoginActivity"/>
+        <activity android:name=".example.observer.eventmsg.FirstActivity"/>
+        <activity android:name=".example.observer.eventmsg.ThirdActivity"/>
+        <activity android:name=".example.mvx.mvc.controllers.ChatController"/>
+        <activity android:name=".example.mvx.mvc.controllers.LoginController"/>
+        <activity android:name=".example.expandable.ExpandeActivity"/>
+        <activity android:name=".example.expandable.ExpanActivity"/>
+
+        <activity android:name=".example.retrofit.ui.Teach1Activity"/>
+        <activity android:name=".example.retrofit.ui.RetrofitActivity"/>
+        <activity android:name=".example.retrofit.ui.Teach2Activity"/>
+        <activity android:name=".example.retrofit.ui.Teach3Activity"/>
+        <activity android:name=".example.retrofit.ui.Teach4Activity"/>
+
 
         <service android:name=".example.service.MyService"/>
     </application>

@@ -1,4 +1,4 @@
-package com.shsany.testapp.example.observer.weather.news;
+package com.shsany.testapp.example.observer.news;
 
 /**
  * Created by PC on 2017/11/30.

@@ -1,4 +1,4 @@
-package com.shsany.testapp.example.observer.weather.news;
+package com.shsany.testapp.example.observer.news;
 
 import java.util.ArrayList;
 import java.util.List;

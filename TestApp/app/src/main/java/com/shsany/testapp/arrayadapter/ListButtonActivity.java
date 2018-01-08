@@ -12,6 +12,8 @@ import android.widget.ListView;
 import com.shsany.testapp.Login.LoginActivity;
 import com.shsany.testapp.R;
 import com.shsany.testapp.example.Tab.TraditionalActivity;
+import com.shsany.testapp.example.mvx.mvc.controllers.LoginController;
+import com.shsany.testapp.example.observer.eventmsg.FirstActivity;
 import com.shsany.testapp.example.view.CustomStateActivity;
 import com.shsany.testapp.example.view.ViewActivity;
 
@@ -42,8 +44,8 @@ public class ListButtonActivity extends Activity {
         catalogList.add(new Catalog("按钮3", LoginActivity.class));
         catalogList.add(new Catalog("按钮4", TraditionalActivity.class));
         catalogList.add(new Catalog("按钮5", com.shsany.testapp.example.mvp.login.LoginActivity.class));
-        catalogList.add(new Catalog("按钮6", ViewActivity.class));
-        catalogList.add(new Catalog("按钮7", ViewActivity.class));
+        catalogList.add(new Catalog("按钮6", FirstActivity.class));
+        catalogList.add(new Catalog("按钮7", LoginController.class));
 
         // 这里ListView的适配器选用ArrayAdapter，ListView中每一项的布局选用系统的simple_list_item_1
         ArrayAdapter<Catalog> adapter = new ArrayAdapter<Catalog>(this,android.R.layout.simple_list_item_1,catalogList);
