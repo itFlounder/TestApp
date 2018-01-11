@@ -18,13 +18,14 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".arrayadapter.ListButtonActivity"/>
+
         <activity android:name=".activity.ListviewActivity"/>
         <activity android:name=".example.Tab.TraditionalActivity"/>
         <activity android:name=".DownLoad.LoadActivity"/>
         <activity android:name=".example.fish.FishActivity"/>
         <activity android:name=".example.view.ViewActivity"/>
         <activity android:name=".contacts.ContactsActivity"/>
-        <activity android:name=".arrayadapter.ListButtonActivity"/>
         <activity android:name=".example.view.CustomStateActivity"/>
         <activity android:name=".Login.LoginActivity"/>
         <activity android:name=".mvvm.view.MvvmTestActivity"/>

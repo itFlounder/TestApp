@@ -1,7 +1,6 @@
 package com.shsany.testapp.example.retrofit.presenter.impl;
 
-import com.shsany.testapp.example.retrofit.bean.ApiBean;
-import com.shsany.testapp.example.retrofit.bean.IpBean;
+import com.shsany.testapp.example.retrofit.bean.Book;
 import com.shsany.testapp.example.retrofit.model.Teach4Model;
 import com.shsany.testapp.example.retrofit.model.impl.Teach4ModelImpl;
 import com.shsany.testapp.example.retrofit.presenter.Teach4Presenter;
@@ -24,7 +23,7 @@ public class Teach4PresenterImpl implements Teach4Presenter {
 
     @Override
     public void queryIpInfo(String ip) {
-        Subscriber<ApiBean<IpBean>> mySubscriber = new Subscriber<ApiBean<IpBean>>() {
+        Subscriber<Book> mySubscriber = new Subscriber<Book>() {
             @Override
             public void onCompleted() {
             }
@@ -35,8 +34,8 @@ public class Teach4PresenterImpl implements Teach4Presenter {
             }
 
             @Override
-            public void onNext(ApiBean<IpBean> apiBean) {
-                teach4View.showIpInfo(apiBean.data);
+            public void onNext(Book book) {
+                teach4View.showIpInfo(book.getTotal());
             }
         };
         teach4Model.queryIpInfo(ip, mySubscriber);

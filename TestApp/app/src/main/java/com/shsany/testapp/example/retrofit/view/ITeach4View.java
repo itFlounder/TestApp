@@ -1,7 +1,5 @@
 package com.shsany.testapp.example.retrofit.view;
 
-import com.shsany.testapp.example.retrofit.bean.IpBean;
-
 /**
  * Created by PC on 2018/1/8.
  *
@@ -12,9 +10,9 @@ public interface ITeach4View {
     /**
      * 显示IP信息
      *
-     * @param ipBean IP实体类
+     * @param total
      */
-    public void showIpInfo(IpBean ipBean);
+    public void showIpInfo(int total);
 
     /**
      * 显示错误消息

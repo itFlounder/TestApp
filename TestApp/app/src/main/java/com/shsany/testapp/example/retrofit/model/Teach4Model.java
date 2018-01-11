@@ -1,7 +1,6 @@
 package com.shsany.testapp.example.retrofit.model;
 
-import com.shsany.testapp.example.retrofit.bean.ApiBean;
-import com.shsany.testapp.example.retrofit.bean.IpBean;
+import com.shsany.testapp.example.retrofit.bean.Book;
 
 import rx.Subscriber;
 
@@ -17,5 +16,5 @@ public interface Teach4Model {
      *
      * @param ip ip地址
      */
-    public void queryIpInfo(String ip, Subscriber<ApiBean<IpBean>> subscriber);
+    public void queryIpInfo(String ip, Subscriber<Book> subscriber);
 }

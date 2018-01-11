@@ -12,9 +12,8 @@ import android.widget.Toast;
 
 import com.shsany.testapp.R;
 import com.shsany.testapp.example.retrofit.api.APIService;
+import com.shsany.testapp.example.retrofit.bean.Book;
 import com.shsany.testapp.example.retrofit.bean.DemoBean;
-
-import java.io.IOException;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -73,7 +72,7 @@ public class Teach1Activity extends Activity implements View.OnClickListener {
      * retrofit使用Execute方法获取数据，要开启线程
      */
     private void retrofitExecute() {
-        new Thread(new Runnable() {
+        /*new Thread(new Runnable() {
             @Override
             public void run() {
                 String ip = mIpText.getText().toString();
@@ -100,7 +99,7 @@ public class Teach1Activity extends Activity implements View.OnClickListener {
                     e.printStackTrace();
                 }
             }
-        }).start();
+        }).start();*/
     }
 
     /**
@@ -112,18 +111,19 @@ public class Teach1Activity extends Activity implements View.OnClickListener {
             Toast.makeText(mContext, "请输入IP地址", Toast.LENGTH_SHORT).show();
             return;
         }
-        String baseUrl = "http://ip.taobao.com";
+        String baseUrl = "https://api.douban.com/v2/";
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(baseUrl)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         APIService apiService = retrofit.create(APIService.class);
-        Call<DemoBean> call = apiService.getIpInfo(ip);
-        call.enqueue(new Callback<DemoBean>() {
+        Call<Book> call = apiService.getIpInfo("金瓶梅",null, 0, 1);
+        call.enqueue(new Callback<Book>() {
             @Override
-            public void onResponse(Response<DemoBean> response) {
-                DemoBean demoBean = response.body();
-                String ipInfo = String.format("这里是用回调的方式获取的数据，IP是：%s，我在%s%s%s", demoBean.data.ip, demoBean.data.country, demoBean.data.region, demoBean.data.city);
+            public void onResponse(Response<Book> response) {
+//                mIpInfoText.setText(response.body().toString());
+                Book book = response.body();
+                String ipInfo = String.format("这里是用回调的方式获取的数据，IP是：%s，我在%s,%s,%s", book.getBooks(),book.getCount(),book.getStart(),book.getTotal());
                 mIpInfoText.setText(ipInfo);
             }
 

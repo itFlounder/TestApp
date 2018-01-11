@@ -8,7 +8,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.shsany.testapp.R;
-import com.shsany.testapp.example.retrofit.bean.IpBean;
 import com.shsany.testapp.example.retrofit.presenter.Teach4Presenter;
 import com.shsany.testapp.example.retrofit.presenter.impl.Teach4PresenterImpl;
 import com.shsany.testapp.example.retrofit.view.ITeach4View;
@@ -61,8 +60,8 @@ public class Teach4Activity extends Activity implements View.OnClickListener,ITe
 
 
     @Override
-    public void showIpInfo(IpBean ipBean) {
-        String ipInfo = String.format("这里是用MVP模式结合RxJava获取的数据，IP是：%s，我在%s%s%s", ipBean.ip, ipBean.country, ipBean.region, ipBean.city);
+    public void showIpInfo(int total) {
+        String ipInfo = String.format("这里是用MVP模式结合RxJava获取的数据，total是：%s", total);
         mIpInfoText.setText(ipInfo);
     }
 

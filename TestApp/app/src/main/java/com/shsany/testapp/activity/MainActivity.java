@@ -10,8 +10,8 @@ import android.view.View;
 import android.widget.Button;
 
 import com.shsany.testapp.R;
+import com.shsany.testapp.arrayadapter.ListButtonActivity;
 import com.shsany.testapp.example.expandable.ExpanActivity;
-import com.shsany.testapp.example.retrofit.ui.RetrofitActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onClick(View v) {
 //                startActivity(new Intent(MainActivity.this,LoadActivity.class));
 //                startActivity(new Intent(MainActivity.this,ListButtonActivity.class));
-                startActivity(new Intent(MainActivity.this, RetrofitActivity.class));
+                startActivity(new Intent(MainActivity.this, ListButtonActivity.class));
             }
         });
 

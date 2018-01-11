@@ -9,8 +9,7 @@ import android.widget.Toast;
 
 import com.shsany.testapp.R;
 import com.shsany.testapp.example.retrofit.api.APIService;
-import com.shsany.testapp.example.retrofit.bean.ApiBean;
-import com.shsany.testapp.example.retrofit.bean.IpBean;
+import com.shsany.testapp.example.retrofit.bean.SectionBean;
 
 import retrofit2.GsonConverterFactory;
 import retrofit2.Retrofit;
@@ -67,17 +66,17 @@ public class Teach3Activity extends Activity implements View.OnClickListener {
             Toast.makeText(this, "请输入IP地址", Toast.LENGTH_SHORT).show();
             return;
         }
-        String baseUrl = "http://ip.taobao.com";
+        String baseUrl = "http://192.168.0.159:8080";
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(baseUrl)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create()) // RxCallAdapter
                 .build();
         APIService apiService = retrofit.create(APIService.class);
-        Observable<ApiBean<IpBean>> myObservable = apiService.getIpInfo3(ip);
+        Observable<SectionBean> myObservable = apiService.getInfo();
         myObservable.subscribeOn(Schedulers.io()) // 指定 subscribe() 发生在 IO 线程
                 .observeOn(AndroidSchedulers.mainThread()) // 指定 Subscriber 的回调发生在主线程
-                .subscribe(new Subscriber<ApiBean<IpBean>>() {
+                .subscribe(new Subscriber<SectionBean>() {
                     @Override
                     public void onCompleted() {
                     }
@@ -89,8 +88,8 @@ public class Teach3Activity extends Activity implements View.OnClickListener {
                     }
 
                     @Override
-                    public void onNext(ApiBean<IpBean> apiBean) {
-                        String ipInfo = String.format("这里是结合RxJava获取的数据，IP是：%s，我在%s%s%s", apiBean.data.ip, apiBean.data.country, apiBean.data.region, apiBean.data.city);
+                    public void onNext(SectionBean sectionBean) {
+                        String ipInfo = String.format("这里是结合RxJava获取的数据，IP是：%s，我在%s", sectionBean.getState(),sectionBean.getData().get(1).getBmmc());
                         mIpInfoText.setText(ipInfo);
                     }
                 });
